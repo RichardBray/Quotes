@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Text, View, Button } from 'react-native';
-import { data } from './quotes.json';
+import React, { Component } from 'react'
+import { Text, View, Button } from 'react-native'
+import { data } from './quotes.json'
 
 
 class App extends Component {
@@ -10,12 +10,14 @@ class App extends Component {
   }
 
   /**
-   * Returns a random number based on the amount of data provuded
+   * Returns a random number based on the amount of data provided.
+   * Runs the same funciton again to prevent the same random 
+   * number being returned.
    */
   randomNum() {
     const rand = Math.floor(Math.random() * data.length)
     if (this.state.quoteID === rand) {
-      console.log('same number hit')
+      // console.log('same number hit')
       return this.randomNum()
     }
     return rand
